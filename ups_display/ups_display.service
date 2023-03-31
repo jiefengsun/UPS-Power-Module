@@ -1,0 +1,13 @@
+
+[Unit]
+Description=UPS Powert Module display service
+
+[Service]
+Type=simple
+User=jiefeng
+ExecStart=/bin/sh -c "python3 -m ups_display.display_server"
+WorkingDirectory=/home/jiefeng
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
