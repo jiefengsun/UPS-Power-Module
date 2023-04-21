@@ -9,7 +9,7 @@ Description=UPS Powert Module display service
 [Service]
 Type=simple
 User=%s
-ExecStart=/bin/sh -c "python3 -m ups_display.display_server"
+ExecStart=/bin/sh -c "echo PASS | sudo -S usermod -aG i2c $USER && python3 -m ups_display.display_server"
 WorkingDirectory=%s
 Restart=always
 
